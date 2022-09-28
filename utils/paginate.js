@@ -2,9 +2,9 @@ exports.getItems = (model, page, page_size) => {
     const query = {}
     const options = {
         lean: true,
-        sort: { updatedAt: -1 },
+        sort: { createdAt: -1 },
         limit: page_size,
-        page: page,
+        offset: page,
         forceCountFn: true,
     };
     return new Promise((resolve, reject) => {
