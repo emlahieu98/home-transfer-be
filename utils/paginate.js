@@ -3,14 +3,16 @@ exports.getItems = (model, page, page_size) => {
     const options = {
         lean: true,
         sort: { createdAt: -1 },
+        page: page,
         limit: page_size,
-        offset: page,
         forceCountFn: true,
-    };
+    }
     return new Promise((resolve, reject) => {
-        model.paginate(query, options).then((result) => {
-            resolve(result)
-        })
+        model
+            .paginate(query, options)
+            .then((result) => {
+                resolve(result)
+            })
             .catch((err) => {
                 reject(err)
             })
