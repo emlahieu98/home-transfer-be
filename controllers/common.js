@@ -1,7 +1,7 @@
 const { cloudinary } = require('./../utils/cloudinary')
 const { transValidation } = require('../langs/errors/vn')
 const { adminSendMail } = require('../utils/common')
-const Joi = require('Joi')
+const Joi = require('joi')
 
 exports.uploadFile = async (req, res, next) => {
     try {
